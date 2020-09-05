@@ -4,6 +4,11 @@ import random
 from os.path import abspath, dirname
 
 
+BASE_PATH = abspath(dirname(__file__))
+FONT_PATH = BASE_PATH + '/fonts/'
+IMAGE_PATH = BASE_PATH + '/images/'
+SOUND_PATH = BASE_PATH + '/sounds/'
+
 # Colors (R, G, B)
 WHITE = (255, 255, 255)
 GREEN = (78, 255, 87)
@@ -11,3 +16,14 @@ YELLOW = (241, 255, 0)
 BLUE = (80, 255, 239)
 PURPLE = (203, 0, 255)
 RED = (237, 28, 36)
+
+SCREEN = pygame.display.set_mode((800, 600))
+FONT = FONT_PATH + 'space_invaders.ttf'
+IMG_NAMES = ['ship', 'mystery',
+             'enemy1_1', 'enemy1_2',
+             'enemy2_1', 'enemy2_2',
+             'enemy3_1', 'enemy3_2',
+             'explosionblue', 'explosiongreen', 'explosionpurple',
+             'laser', 'enemylaser']
+IMAGES = {name: pygame.image.load(IMAGE_PATH + '{}.png'.format(name)).convert_alpha()
+          for name in IMG_NAMES}
