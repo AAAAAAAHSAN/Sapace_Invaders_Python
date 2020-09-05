@@ -27,3 +27,7 @@ IMG_NAMES = ['ship', 'mystery',
              'laser', 'enemylaser']
 IMAGES = {name: pygame.image.load(IMAGE_PATH + '{}.png'.format(name)).convert_alpha()
           for name in IMG_NAMES}
+
+BLOCKERS_POSITION = 450
+ENEMY_DEFAULT_POSITION = 65  # Initial value for a new game
+ENEMY_MOVE_DOWN = 35
